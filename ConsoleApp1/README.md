@@ -48,6 +48,39 @@ Test Run Aborted with error System.Exception: One or more errors occurred.
 
 ```
 
+run tests with dotnet5 via Rosetta, it passes
+```bash
+
+andrey@Andreys-MacBook ClearScriptCrush % dotnet5 test TestProjectXUnit --no-build
+Test run for /Users/andrey/Programming/CoverGo/ClearScriptCrush/TestProjectXUnit/bin/Debug/net5.0/TestProjectXUnit.dll (.NETCoreApp,Version=v5.0)
+Microsoft (R) Test Execution Command Line Tool Version 16.11.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+
+Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 8 s - /Users/andrey/Programming/CoverGo/ClearScriptCrush/TestProjectXUnit/bin/Debug/net5.0/TestProjectXUnit.dll (net5.0)
+Test run for /Users/andrey/Programming/CoverGo/ClearScriptCrush/TestProjectXUnit/bin/Debug/net6.0/TestProjectXUnit.dll (.NETCoreApp,Version=v6.0)
+Microsoft (R) Test Execution Command Line Tool Version 16.11.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Testhost process exited with error: It was not possible to find any compatible framework version
+The framework 'Microsoft.NETCore.App', version '6.0.0' was not found.
+  - The following frameworks were found:
+      5.0.11 at [/usr/local/share/dotnet/x64/shared/Microsoft.NETCore.App]
+You can resolve the problem by installing the specified framework and/or SDK.
+The specified framework can be found at:
+  - https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=6.0.0&arch=x64&rid=osx.11.1-x64
+. Please check the diagnostic logs for more information.
+
+Test Run Aborted.
+
+```
+
+
+dotnet6 fails for XUnit and NUnit as well 
 
 Run the same work via NUnit:
 ```bash
