@@ -1,8 +1,14 @@
 using Microsoft.ClearScript.V8;
 
-class EngineCheck
+public class EngineCheck
 {
-    public void Run(int iterations)
+    private readonly Action<string> _workCompleteCallback;
+
+    public EngineCheck(Action<string>? workCompleteCallback=null)
+    {
+        _workCompleteCallback = workCompleteCallback ?? (Action<string>) (s => { });
+    }
+    public void Run(int iterations=20000)
     {
         using var engine = new V8ScriptEngine();
         engine.Evaluate( @"
@@ -11,11 +17,11 @@ class EngineCheck
                          }               
             ");
             
-        foreach (int n in Enumerable.Range(0, 20000))
+        foreach (int n in Enumerable.Range(0, iterations))
         {
             var obj = new {Number = n, Text = "some string string"};
             string scriptOutput = engine.Script.createString(obj);
-            Console.WriteLine(scriptOutput);
+            _workCompleteCallback(scriptOutput);
         }
     }
 }

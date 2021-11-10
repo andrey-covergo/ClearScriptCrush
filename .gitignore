@@ -3,3 +3,13 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+*.user
+.idea
+node_modules/
+package-lock.json
+
+*.log
+
+TestResults/
+.sonarqube/
+.config/
