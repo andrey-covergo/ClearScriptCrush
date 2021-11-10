@@ -1,26 +1,29 @@
 using System;
+using ConsoleApp1;
 using NUnit.Framework;
 
-namespace TestProjectNUnit;
-
-public class Tests
+namespace TestProjectNUnit
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
 
-    [Test]
-    public void Test1()
+    public class Tests
     {
-        Console.WriteLine("Hello, World!");
-        new EngineCheck(r => Console.WriteLine(r)).Run();
-        Console.WriteLine("All done");
-    } 
-    
-    [Test]
-    public void Silent()
-    {
-        new EngineCheck().Run();
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void Test1()
+        {
+            Console.WriteLine("Hello, World!");
+            new EngineCheck(r => Console.WriteLine(r)).Run();
+            Console.WriteLine("All done");
+        }
+
+        [Test]
+        public void Silent()
+        {
+            new EngineCheck().Run();
+        }
     }
 }
