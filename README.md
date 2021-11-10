@@ -6,7 +6,10 @@ Tested system:
 andrey@Andreys-MacBook TestProjectNUnit % dotnet --version
 6.0.100
 ```
-
+```bash
+andrey@Andreys-MacBook ~ % uname -m
+arm64
+```
 ```bash
 andrey@Andreys-MacBook TestProjectNUnit %  sw_vers
 ProductName:    macOS
